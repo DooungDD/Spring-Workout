@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myweb.basic.command.ProductVO;
 import com.myweb.basic.product.ProductService;
+import com.myweb.basic.util.Criteria;
 
 @Controller
 @RequestMapping("/product")
@@ -34,13 +35,15 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productList")
-	public String productList(Model model) {
+	public String productList(Model model, Criteria cri) {
 		
 		//1st - admin기반으로 조회(나중에 세션값으로 변경)
-		List<ProductVO> list = productService.getList();
+		//List<ProductVO> list = productService.getList();
+		//model.addAttribute("list", list);
+		
+		//2nd - 페이지
+		List<ProductVO> list = productService.getList(cri);
 		model.addAttribute("list", list);
-		
-		
 		
 		return "product/productList";
 	}

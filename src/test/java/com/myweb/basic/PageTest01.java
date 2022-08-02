@@ -1,6 +1,6 @@
 package com.myweb.basic;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.myweb.basic.command.ProductVO;
 import com.myweb.basic.product.ProductMapper;
+import com.myweb.basic.util.Criteria;
 
 @SpringBootTest
 class PageTest01 {
@@ -34,6 +35,19 @@ class PageTest01 {
 //									.build();
 //			
 //			productMapper.productRegist(vo);
+//		}
+//	}
+	
+//	@Test
+//	public void testCode02() {
+//		//Criteria cri = new Criteria();	//page = 1, amount = 10;
+//
+//		Criteria cri = new Criteria(2, 20);
+//		
+//		List<ProductVO> list =  productMapper.getList(cri);
+//		
+//		for(ProductVO vo : list) {
+//			System.out.println(vo.toString());
 //		}
 //	}
 

@@ -26,11 +26,13 @@
  						   #{prod_comment})
  	</insert>
  
+<!--  		limit (#{page} - 1) * #{amount}, #{page} * #{amount} -->
  	<select id="getList" resultType="ProductVO">
  		select * 
  		from product 
  		where prod_writer = 'admin' 
  		order by prod_id desc
+ 		limit #{pageStart}, #{amount}
  	</select>
  
  	<select id="getDetail" resultType="ProductVO">

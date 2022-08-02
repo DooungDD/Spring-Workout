@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myweb.basic.command.ProductVO;
+import com.myweb.basic.util.Criteria;
 
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
@@ -21,9 +22,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> getList() {
-		
-		return productMapper.getList();
+	public List<ProductVO> getList(Criteria cri) {
+		return productMapper.getList(cri);
 	}
 
 	@Override
